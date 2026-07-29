@@ -21,36 +21,17 @@ export class MapScene extends Scene {
 
     const g = this.add.graphics();
     g.lineStyle(4, 0xffffff, 1);
-    g.moveTo(0, center_y);
-    g.lineTo(this.scale.width, center_y);
-    g.moveTo(center_x, 0);
-    g.lineTo(center_x, this.scale.height);
+    g.moveTo(0, center_y).lineTo(this.scale.width, center_y);
+    g.moveTo(center_x, 0).lineTo(center_x, this.scale.height);
 
     // with inhabitants
-    g.moveTo(0, center_y + (100 - inhabitants));
-    g.lineTo(this.scale.width, center_y + (100 - inhabitants));
-    g.moveTo(center_x + (100 - inhabitants), 0);
-    g.lineTo(center_x + (100 - inhabitants), this.scale.height);
+    g.moveTo(0, center_y + (100 - inhabitants)).lineTo(this.scale.width, center_y + (100 - inhabitants));
+    g.moveTo(center_x + (100 - inhabitants), 0).lineTo(center_x + (100 - inhabitants), this.scale.height);
 
-    // with inhabitants
-    g.moveTo(0, center_y - (100 + inhabitants));
-    g.lineTo(this.scale.width, center_y - (100 + inhabitants));
-    g.moveTo(center_x - (100 + inhabitants), 0);
-    g.lineTo(center_x - (100 + inhabitants), this.scale.height);
-    
+    // with inhabitants reverse
+    g.moveTo(0, center_y - (100 + inhabitants)).lineTo(this.scale.width, center_y - (100 + inhabitants));
+    g.moveTo(center_x - (100 + inhabitants), 0).lineTo(center_x - (100 + inhabitants), this.scale.height);
+
     g.strokePath();
   }
-
-  // update() {
-  //     // Déplace le vélo avec les flèches gauche/droite
-  //     if (this.cursors.left.isDown) {
-  //         this.bike.x -= 4;
-  //     } else if (this.cursors.right.isDown) {
-  //         this.bike.x += 4;
-  //     }
-  // }
-
-  // Propriétés typées (TypeScript)
-  // private bike!: Phaser.GameObjects.Image;
-  // private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
 }
